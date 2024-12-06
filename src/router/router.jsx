@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout';
 import AddEquipment from '../components/AddEquipment';
 import DisplayEqup from '../components/DisplayEqup';
 import AllEquipment from '../components/AllEquipment';
+import ViewDetails from '../pages/ViewDetails';
 
 
 const router = createBrowserRouter([
@@ -28,15 +29,25 @@ const router = createBrowserRouter([
         element: <AddEquipment></AddEquipment>,
     },
     {
+        path: '/viewDetails',
+        element: <ViewDetails></ViewDetails>,
+    },
+    {
         path: '/allequipment',
         element: <AllEquipment></AllEquipment>,
         loader: async () => {
             const res = await fetch('http://localhost:5000/equipment');
             if (!res.ok) {
-              throw new Error('Failed to fetch equipment');
+                throw new Error('Failed to fetch equipment');
             }
             return res.json();
-          },
+        },
+    },
+    {
+        path: '/viewDetails/:id',
+        element: <ViewDetails></ViewDetails>,
+        loader: ({ params }) =>
+            fetch(`http://localhost:5000/equipment/${params.id}`),
     },
     {
         path: '*',

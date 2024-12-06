@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const AllEquipment = () => {
@@ -36,9 +36,9 @@ const AllEquipment = () => {
                                         <td className="border p-4">{item.rating} ⭐</td>
                                         <td className="border p-4">{item.stockStatus}</td>
                                         <td className="border p-4">
-                                            <button className="btn btn-sm">
-                                                View Details
-                                            </button>
+                                            <Link to={`/viewDetails/${item._id}`}>
+                                                <button className="btn">View Details</button>
+                                            </Link>
                                         </td>
                                     </tr>
                                 ))
