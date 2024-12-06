@@ -15,15 +15,15 @@ const EquipmentCard = ({ equipment, loadedEquipments, SetLoadedEqiupments }) => 
                     <p>Chef: {categoryName}</p>
                     <p>Taste: {price}</p>
                 </div>
-                {/* <div className="card-actions justify-end join join-vertical">
+                <div className="card-actions justify-end join join-vertical">
                     <button className="btn join-item">View</button>
-                    <Link to={`/updateCoffee/${_id}`}>
+                    {/* <Link to={`/updateCoffee/${_id}`}>
                         <button className="btn join-item">Edit</button>
-                    </Link>
-                    <button
+                    </Link> */}
+                    {/* <button
                         onClick={() => handleDelete(_id)}
-                        className="btn join-item bg-red-500">X</button>
-                </div> */}
+                        className="btn join-item bg-red-500">X</button> */}
+                </div>
             </div>
         </div>
     );
