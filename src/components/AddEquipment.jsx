@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Swal from 'sweetalert2';
 
 const AddEquipment = () => {
 
@@ -30,12 +31,12 @@ const AddEquipment = () => {
             .then(data => {
                 if (data.insertedId) {
                     console.log('successfully added');
-                    // Swal.fire({
-                    //     title: 'Success!',
-                    //     text: 'Coffee added successfully',
-                    //     icon: 'success',
-                    //     confirmButtonText: 'Ok'
-                    // });
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Eqipment added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    });
                     e.target.reset();
                 }
             })

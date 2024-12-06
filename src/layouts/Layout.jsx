@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Header from '../components/Header';
+
 import { Outlet } from 'react-router-dom';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 const Layout = () => {
     return (
@@ -10,7 +11,7 @@ const Layout = () => {
             <nav>
                 <Navbar></Navbar>
             </nav>
-            <header>
+            <header className='w-10/12 mx-auto'>
                 <Header></Header>
             </header>
             <main>
