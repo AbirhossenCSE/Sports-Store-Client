@@ -9,6 +9,7 @@ import MyEquipment from '../pages/MyEquipment';
 import AuthLayout from '../layouts/AuthLayout';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
+import PrivateRoute from './PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/myequipment',
-        element: <MyEquipment></MyEquipment>,
+        element: <PrivateRoute><MyEquipment></MyEquipment></PrivateRoute> ,
     },
     {
         path: '/viewDetails',

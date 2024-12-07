@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { FaRegUser } from 'react-icons/fa';
 
 const Navbar = () => {
 
     const { user, LogOut } = useContext(AuthContext)
+    const location = useLocation();
+
 
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
