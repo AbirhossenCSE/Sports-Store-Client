@@ -1,15 +1,3 @@
-// import React from 'react';
-
-// const Register = () => {
-//     return (
-//         <div>
-//             <h2>register</h2>
-//         </div>
-//     );
-// };
-
-// export default Register;
-
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
