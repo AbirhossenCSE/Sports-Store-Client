@@ -1,12 +1,17 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+import { FaRegUser } from 'react-icons/fa';
 
 const Navbar = () => {
 
+    const { user, LogOut } = useContext(AuthContext)
+
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/addequipment">Add Sports Equipment</NavLink></li>
         <li><NavLink to="/allequipment"> All Equipment</NavLink></li>
+        <li><NavLink to="/addequipment">Add Equipment</NavLink></li>
+        <li><NavLink to="/myequipment"> My Equipment</NavLink></li>
     </>
 
     return (
@@ -42,7 +47,33 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Log-In</a>
+                    <div className="relative group w-8 h-8 mr-5">
+                        {user?.email ? (
+                            <div className="flex flex-col items-center">
+                                <img
+                                    className="w-8 h-8 rounded-full cursor-pointer"
+                                    src={user?.photoURL}
+                                    alt="User Profile"
+                                />
+                                <p className="absolute left-[-104px] bg-white text-black text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                    {user?.displayName}
+                                </p>
+                            </div>
+                        ) : (
+                            // <img src={UserIcon} alt="" />
+                            <FaRegUser />
+                        )}
+                    </div>
+
+                    {user && user?.email ? (
+                        <button onClick={LogOut} className="btn btn-neutral rounded-lg">
+                            LogOut
+                        </button>
+                    ) : (
+                        <Link to="/auth/login" className="btn btn-neutral rounded-lg">
+                            Login
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>

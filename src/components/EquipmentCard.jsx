@@ -1,28 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const EquipmentCard = ({ equipment, loadedEquipments, SetLoadedEqiupments }) => {
-    const {name, categoryName, price, rating, processingTime, stockStatus, customization, imageUrl, description} = equipment;
+    const { _id, name, categoryName, price, rating, processingTime, stockStatus, customization, imageUrl, description } = equipment;
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
+        <div className="card lg:card-side bg-base-100 shadow-xl mt-10 p-2">
             <figure>
                 <img
+                    className='p-2'
                     src={imageUrl}
                     alt="coffee" />
             </figure>
             <div className="flex w-full m-4 items-center justify-between">
-                <div>
-                    <p>Name: {name}</p>
-                    <p>Chef: {categoryName}</p>
-                    <p>Taste: {price}</p>
-                </div>
-                <div className="card-actions justify-end join join-vertical">
-                    <button className="btn join-item">View</button>
-                    {/* <Link to={`/updateCoffee/${_id}`}>
-                        <button className="btn join-item">Edit</button>
-                    </Link> */}
-                    {/* <button
-                        onClick={() => handleDelete(_id)}
-                        className="btn join-item bg-red-500">X</button> */}
+                <div className='p-2 m-2'>
+                    <p><strong>Name:</strong> {name}</p>
+                    <p><strong>Category</strong> {categoryName}</p>
+                    <p><strong>Price:</strong> {price}</p>
+                    <Link to={`/viewDetails/${_id}`}>
+                        <button className="btn">View Details</button>
+                    </Link>
                 </div>
             </div>
         </div>

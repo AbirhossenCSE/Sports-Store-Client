@@ -5,6 +5,10 @@ import AddEquipment from '../components/AddEquipment';
 import DisplayEqup from '../components/DisplayEqup';
 import AllEquipment from '../components/AllEquipment';
 import ViewDetails from '../pages/ViewDetails';
+import MyEquipment from '../pages/MyEquipment';
+import AuthLayout from '../layouts/AuthLayout';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
 
 
 const router = createBrowserRouter([
@@ -29,6 +33,10 @@ const router = createBrowserRouter([
         element: <AddEquipment></AddEquipment>,
     },
     {
+        path: '/myequipment',
+        element: <MyEquipment></MyEquipment>,
+    },
+    {
         path: '/viewDetails',
         element: <ViewDetails></ViewDetails>,
     },
@@ -48,6 +56,20 @@ const router = createBrowserRouter([
         element: <ViewDetails></ViewDetails>,
         loader: ({ params }) =>
             fetch(`http://localhost:5000/equipment/${params.id}`),
+    },
+    {
+        path: '/auth',
+        element: <AuthLayout></AuthLayout>,
+        children: [
+            {
+                path: '/auth/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/auth/register',
+                element: <Register></Register>
+            },
+        ]
     },
     {
         path: '*',
