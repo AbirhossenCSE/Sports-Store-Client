@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from './Navbar';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
 
 const AddEquipment = () => {
+    const { user } = useContext(AuthContext)
 
-    const handleAddEqu = e =>{
+    const handleAddEqu = e => {
         e.preventDefault();
 
         const name = e.target.name.value;
@@ -16,8 +18,10 @@ const AddEquipment = () => {
         const customization = e.target.customization.value;
         const imageUrl = e.target.imageUrl.value;
         const description = e.target.description.value;
+        const userEmail = e.target.userEmail.value;
+        const userName = e.target.userName.value;
 
-        const newEqu = {name, categoryName, price, rating, processingTime, stockStatus, customization, imageUrl, description}
+        const newEqu = { name, categoryName, price, rating, processingTime, stockStatus, customization, imageUrl, description, userEmail, userName }
         console.log(newEqu);
 
         fetch('http://localhost:5000/equipment', {
@@ -40,7 +44,7 @@ const AddEquipment = () => {
                     e.target.reset();
                 }
             })
-        
+
     }
 
     return (
@@ -169,7 +173,34 @@ const AddEquipment = () => {
                                 className="input input-bordered w-full"
                             />
                         </div>
-
+                    </div>
+                    <div className='flex gap-4'>
+                        {/* user name */}
+                        <div className="form-control w-1/2">
+                            <label className="label">
+                                <span className="label-text">User Name</span>
+                            </label>
+                            <input
+                                type="userName"
+                                name="userName"
+                                placeholder="User Name"
+                                defaultValue={user?.displayName}
+                                className="input input-bordered w-full"
+                            />
+                        </div>
+                        {/* user email */}
+                        <div className="form-control w-1/2">
+                            <label className="label">
+                                <span className="label-text">User Email</span>
+                            </label>
+                            <input
+                                type="email"
+                                name="userEmail"
+                                placeholder="Enter Your Email"
+                                defaultValue={user?.email}
+                                className="input input-bordered w-full"
+                            />
+                        </div>
                     </div>
                     {/* Description */}
                     <div className="form-control">
@@ -182,8 +213,6 @@ const AddEquipment = () => {
                             className="textarea textarea-bordered w-full"
                         ></textarea>
                     </div>
-
-
 
                     {/* Submit Button */}
                     <div className="form-control mt-4">

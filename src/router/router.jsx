@@ -10,6 +10,7 @@ import AuthLayout from '../layouts/AuthLayout';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import PrivateRoute from './PrivateRoute';
+import Profile from '../components/Profile';
 
 
 const router = createBrowserRouter([
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/myequipment',
-        element: <PrivateRoute><MyEquipment></MyEquipment></PrivateRoute> ,
+        element: <MyEquipment></MyEquipment> ,
     },
     {
         path: '/viewDetails',
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
         ]
+    },
+    {
+        path: '/profile',
+        element: <Profile></Profile>,
     },
     {
         path: '*',

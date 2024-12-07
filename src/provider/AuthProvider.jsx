@@ -46,14 +46,30 @@ const AuthProvider = ({ children }) => {
         
     };
 
-    useEffect(() =>{
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) =>{
-            setUser(currentUser);
-            setLoading(false)
+    // useEffect(() =>{
+    //     const unsubscribe = onAuthStateChanged(auth, (currentUser) =>{
+    //         setUser(currentUser);
+    //         setLoading(false)
+    //     });
+    //     return () =>{
+    //         unsubscribe();
+    //     }
+    // }, []);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            if (currentUser) {
+                setUser({
+                    email: currentUser.email,
+                    displayName: currentUser.displayName,
+                    photoURL: currentUser.photoURL,
+                });
+            } else {
+                setUser(null);
+            }
         });
-        return () =>{
-            unsubscribe();
-        }
+    
+        return () => unsubscribe();
     }, []);
 
     return (
