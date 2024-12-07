@@ -33,11 +33,11 @@ const AllEquipment = () => {
                                         <td className="border p-4">{item.name}</td>
                                         <td className="border p-4">{item.categoryName}</td>
                                         <td className="border p-4">${item.price}</td>
-                                        <td className="border p-4">{item.rating} ⭐</td>
+                                        <td className="border p-4">⭐ {item.rating}</td>
                                         <td className="border p-4">{item.stockStatus}</td>
                                         <td className="border p-4">
                                             <Link to={`/viewDetails/${item._id}`}>
-                                                <button className="btn">View Details</button>
+                                                <button className="btn w-full">View Details</button>
                                             </Link>
                                         </td>
                                     </tr>

@@ -84,25 +84,28 @@ const MyEquipment = () => {
                                 <img
                                     src={item.imageUrl}
                                     alt={item.name}
-                                    className="w-full h-48 object-cover rounded-md mb-4"
+                                    className="object-cover rounded-md mb-4 mx-auto"
                                 />
-                                <h2 className="text-xl font-bold text-center mb-2">{item.name}</h2>
-                                <p className="text-gray-600 text-center">Category: {item.categoryName}</p>
-                                <p className="text-gray-600 text-center">Price: ${item.price}</p>
-                                <p className="text-gray-600 text-center">Rating: {item.rating} ⭐</p>
-                                <p className="text-gray-600 text-center">Stock: {item.stockStatus}</p>
-                                <p className="text-gray-600 text-center">Email: {item?.userEmail}</p>
-                                <div className="text-center mt-4">
-                                    
-                                    <Link to={`/updatequipment/${item._id}`}>
-                                        <button className="btn join-item">Edit</button>
-                                    </Link>
-                                    <button
-                                        onClick={() => handleDelete(item._id)} // Pass the item's _id here
-                                        className="btn bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600"
-                                    >
-                                        Delete
-                                    </button>
+                                <h2 className="text-xl font-bold mb-2">Name: {item.name}</h2>
+                                <p className="text-gray-600"><strong>Category:</strong> {item.categoryName}</p>
+                                <p className="text-gray-600"><strong>Price:</strong> ${item.price}</p>
+                                <p className="text-gray-600"><strong>Rating:</strong>⭐ {item.rating} </p>
+                                <p className="text-gray-600"><strong>Stock:</strong> {item.stockStatus}</p>
+                                <p className="text-gray-600"><strong>Email:</strong> {item?.userEmail}</p>
+                                <div className="flex justify-between mt-4 gap-2">
+                                    <div className='w-1/2'>
+                                        <Link to={`/updatequipment/${item._id}`}>
+                                            <button className="btn join-item w-full bg-gray-400">Edit</button>
+                                        </Link>
+                                    </div>
+                                    <div className='w-1/2'>
+                                        <button
+                                            onClick={() => handleDelete(item._id)} // Pass the item's _id here
+                                            className="btn w-full bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         ))}
