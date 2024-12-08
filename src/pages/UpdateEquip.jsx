@@ -37,9 +37,7 @@ const UpdateEquip = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.modifiedCount) {
-                    console.log('Successfully updated');
                     Swal.fire({
                         title: 'Success!',
                         text: 'Updated successfully',
@@ -62,6 +60,7 @@ const UpdateEquip = () => {
                 </nav>
 
                 <div className='w-8/12 mx-auto'>
+                    <h1 className="text-3xl font-bold text-center mb-6">Update Equipment</h1>
                     <form onSubmit={handleUpdate} className="p-6 space-y-4 rounded-lg">
 
                         {/* Two Fields in One Row: Item Name & Category Name */}

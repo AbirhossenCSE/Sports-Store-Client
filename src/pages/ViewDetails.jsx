@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 const ViewDetails = () => {
@@ -13,7 +13,7 @@ const ViewDetails = () => {
             </nav>
             <div className="w-10/12 mx-auto my-10">
                 <h1 className="text-4xl font-bold text-center mb-8">{product.name}</h1>
-                <div className="w-8/12 mx-auto grid lg:grid-cols-2 grid-cols-1">
+                <div className="w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1">
                     <div>
                         <img
                             src={product.imageUrl}
@@ -22,12 +22,12 @@ const ViewDetails = () => {
                         />
                     </div>
                     <div className="mt-5">
-                        <h2 className="text-2xl font-semibold mb-4">Category: {product.categoryName}</h2>
+                        <h2 className="text-lg mb-2"><strong>Category:</strong> {product.categoryName}</h2>
                         <p className="text-lg mb-2">
                             <strong>Price:</strong> ${product.price}
                         </p>
                         <p className="text-lg mb-2">
-                            <strong>Rating:</strong> {product.rating} ⭐
+                            <strong>Rating:⭐</strong> {product.rating} 
                         </p>
                         <p className="text-lg mb-2">
                             <strong>Stock Status:</strong> {product.stockStatus}
@@ -40,6 +40,10 @@ const ViewDetails = () => {
                         </p>
                         <p className="text-lg">
                             <strong>Description:</strong> {product.description}
+                        </p>
+                        <p>
+                            <Link className='btn btn-neutral mt-5 mr-4' to='/'>Back Home</Link>
+                            <Link className='btn btn-neutral mt-5' to='/allequipment'>All Equipment</Link>
                         </p>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 const AllEquipment = () => {
     const equipment = useLoaderData();
     const [sortedEquipment, setSortedEquipment] = useState(equipment);
-    const [sortOrder, setSortOrder] = useState({ field: 'price', order: 'asc' }); 
+    const [sortOrder, setSortOrder] = useState({ field: 'price', order: 'asc' }); // Default sorting field and order
 
     const handleSort = (field) => {
         const isAscending = sortOrder.field === field && sortOrder.order === 'asc';
@@ -31,7 +31,7 @@ const AllEquipment = () => {
                     <div className="dropdown dropdown-end">
                         <button
                             tabIndex={0}
-                            className="btn btn-primary dropdown-toggle"
+                            className="btn dropdown-toggle"
                         >
                             Sort
                         </button>
@@ -67,9 +67,9 @@ const AllEquipment = () => {
                     </div>
                 </div>
                 <div className="overflow-x-auto">
-                    <table className="table-auto border-collapse w-full bg-white shadow-md">
+                    <table className="table-auto border-collapse w-full shadow-md">
                         <thead>
-                            <tr className="bg-gray-200 text-left">
+                            <tr className="bg-gray-500 text-left">
                                 <th className="border p-4">#</th>
                                 <th className="border p-4">Name</th>
                                 <th className="border p-4">Category</th>
@@ -81,7 +81,7 @@ const AllEquipment = () => {
                         <tbody>
                             {Array.isArray(sortedEquipment) && sortedEquipment.length > 0 ? (
                                 sortedEquipment.map((item, index) => (
-                                    <tr key={item.id || index} className="hover:bg-gray-100">
+                                    <tr key={item.id || index} className="hover:bg-gray-50 hover:text-black">
                                         <td className="border p-4">{index + 1}</td>
                                         <td className="border p-4">{item.name}</td>
                                         <td className="border p-4">{item.categoryName}</td>
@@ -89,7 +89,7 @@ const AllEquipment = () => {
                                         <td className="border p-4">⭐ {item.rating}</td>
                                         <td className="border p-4">
                                             <Link to={`/viewDetails/${item._id}`}>
-                                                <button className="btn w-full">View Details</button>
+                                                <button className="btn btn-neutral w-full">View Details</button>
                                             </Link>
                                         </td>
                                     </tr>

@@ -22,7 +22,6 @@ const AddEquipment = () => {
         const userName = e.target.userName.value;
 
         const newEqu = { name, categoryName, price, rating, processingTime, stockStatus, customization, imageUrl, description, userEmail, userName }
-        console.log(newEqu);
 
         fetch('https://sports-equipment-store-server-fawn.vercel.app/equipment', {
             method: 'POST',
@@ -34,7 +33,7 @@ const AddEquipment = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    console.log('successfully added');
+                    
                     Swal.fire({
                         title: 'Success!',
                         text: 'Eqipment added successfully',
@@ -54,6 +53,7 @@ const AddEquipment = () => {
             </nav>
 
             <div className='w-8/12 mx-auto'>
+                <h1 className="text-3xl font-bold text-center mb-6">Add Equipment</h1>
                 <form onSubmit={handleAddEqu} className="p-6 space-y-4 rounded-lg">
 
                     {/* Two Fields in One Row: Item Name & Category Name */}

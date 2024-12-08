@@ -86,7 +86,7 @@ const MyEquipment = () => {
                                     alt={item.name}
                                     className="object-cover rounded-md mb-4 mx-auto"
                                 />
-                                <h2 className="text-xl font-bold mb-2">Name: {item.name}</h2>
+                                <h2 className="text-xl text-center text-gray-700 font-bold mb-2"> {item.name}</h2>
                                 <p className="text-gray-600"><strong>Category:</strong> {item.categoryName}</p>
                                 <p className="text-gray-600"><strong>Price:</strong> ${item.price}</p>
                                 <p className="text-gray-600"><strong>Rating:</strong>⭐ {item.rating} </p>
@@ -95,7 +95,7 @@ const MyEquipment = () => {
                                 <div className="flex justify-between mt-4 gap-2">
                                     <div className='w-1/2'>
                                         <Link to={`/updatequipment/${item._id}`}>
-                                            <button className="btn join-item w-full bg-gray-400">Update</button>
+                                            <button className="btn join-item w-full bg-gray-600 text-white">Update</button>
                                         </Link>
                                     </div>
                                     <div className='w-1/2'>

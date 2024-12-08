@@ -1,18 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
-import { FaRegUser } from 'react-icons/fa';
+import { FaRegUser, FaSun, FaMoon } from 'react-icons/fa';
+import { FiSun } from 'react-icons/fi';
 
 const Navbar = () => {
     const { user, LogOut } = useContext(AuthContext);
     const location = useLocation();
+    const [theme, setTheme] = useState('light'); // Default theme
+
+    // Toggle theme function
+    const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        document.documentElement.setAttribute('data-theme', newTheme); // Update HTML attribute for theme
+    };
 
     const links = (
         <>
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/allequipment">All Equipment</NavLink></li>
-            <li><NavLink to="/addequipment">Add Equipment</NavLink></li>
-            <li><NavLink to="/myequipment">My Equipment</NavLink></li>
+            {user && (
+                <>
+                    <li><NavLink to="/addequipment">Add Equipment</NavLink></li>
+                    <li><NavLink to="/myequipment">My Equipment</NavLink></li>
+                    <li><NavLink to="/profile">My Profile</NavLink></li>
+                </>
+            )}
         </>
     );
 
@@ -44,14 +58,14 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">EquiSports</a>
+                    <a className="btn btn-ghost font-bold text-xl">EquiSports</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end flex items-center gap-4">
                     <div className="relative group w-8 h-8 mr-5">
                         {user?.email ? (
                             <div className="flex flex-col items-center">
@@ -77,6 +91,14 @@ const Navbar = () => {
                             Login
                         </Link>
                     )}
+                    {/* Theme Toggle */}
+                    <button
+                        onClick={toggleTheme}
+                        className="btn btn-ghost"
+                        title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+                    >
+                        {theme === 'light' ? <FaMoon /> : <FiSun />}
+                    </button>
                 </div>
             </div>
         </div>
