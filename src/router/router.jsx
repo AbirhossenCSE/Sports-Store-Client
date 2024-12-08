@@ -26,34 +26,34 @@ const router = createBrowserRouter([
             {
                 path: '/equipment',
                 element: <DisplayEqup></DisplayEqup>,
-                loader: () => fetch('http://localhost:5000/equipment'),
+                loader: () => fetch('https://sports-equipment-store-server-fawn.vercel.app/equipment'),
             },
         ]
 
     },
     {
         path: '/addequipment',
-        element: <AddEquipment></AddEquipment>,
+        element: <PrivateRoute><AddEquipment></AddEquipment></PrivateRoute> ,
     },
     {
         path: '/myequipment',
-        element: <MyEquipment></MyEquipment>,
-        loader: () => fetch('http://localhost:5000/equipment')
+        element: <PrivateRoute><MyEquipment></MyEquipment></PrivateRoute> ,
+        loader: () => fetch('https://sports-equipment-store-server-fawn.vercel.app/equipment')
     },
     {
         path: '/updatequipment/:id',
-        element: <UpdateEquip></UpdateEquip>,
-        loader: ({ params }) => fetch(`http://localhost:5000/equipment/${params.id}`)
+        element: <PrivateRoute><UpdateEquip></UpdateEquip></PrivateRoute> ,
+        loader: ({ params }) => fetch(`https://sports-equipment-store-server-fawn.vercel.app/equipment/${params.id}`)
       },
     {
         path: '/viewDetails',
-        element: <ViewDetails></ViewDetails>,
+        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
     },
     {
         path: '/allequipment',
         element: <AllEquipment></AllEquipment>,
         loader: async () => {
-            const res = await fetch('http://localhost:5000/equipment');
+            const res = await fetch('https://sports-equipment-store-server-fawn.vercel.app/equipment');
             if (!res.ok) {
                 throw new Error('Failed to fetch equipment');
             }
@@ -62,9 +62,9 @@ const router = createBrowserRouter([
     },
     {
         path: '/viewDetails/:id',
-        element: <ViewDetails></ViewDetails>,
+        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
         loader: ({ params }) =>
-            fetch(`http://localhost:5000/equipment/${params.id}`),
+            fetch(`https://sports-equipment-store-server-fawn.vercel.app/equipment/${params.id}`),
     },
     {
         path: '/auth',
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/profile',
-        element: <Profile></Profile>,
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>,
     },
     {
         path: '*',

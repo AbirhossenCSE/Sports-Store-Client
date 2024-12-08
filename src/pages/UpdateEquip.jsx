@@ -28,7 +28,7 @@ const UpdateEquip = () => {
 
 
         // send data to the server and database
-        fetch(`http://localhost:5000/equipment/${_id}`, {
+        fetch(`https://sports-equipment-store-server-fawn.vercel.app/equipment/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -201,6 +201,7 @@ const UpdateEquip = () => {
                                     name="userName"
                                     placeholder="User Name"
                                     defaultValue={user?.displayName}
+                                    readOnly
                                     className="input input-bordered w-full"
                                 />
                             </div>
@@ -214,6 +215,7 @@ const UpdateEquip = () => {
                                     name="userEmail"
                                     placeholder="Enter Your Email"
                                     defaultValue={user?.email}
+                                    readOnly
                                     className="input input-bordered w-full"
                                 />
                             </div>

@@ -24,7 +24,7 @@ const AddEquipment = () => {
         const newEqu = { name, categoryName, price, rating, processingTime, stockStatus, customization, imageUrl, description, userEmail, userName }
         console.log(newEqu);
 
-        fetch('http://localhost:5000/equipment', {
+        fetch('https://sports-equipment-store-server-fawn.vercel.app/equipment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -185,6 +185,7 @@ const AddEquipment = () => {
                                 name="userName"
                                 placeholder="User Name"
                                 defaultValue={user?.displayName}
+                                readOnly
                                 className="input input-bordered w-full"
                             />
                         </div>
@@ -198,6 +199,7 @@ const AddEquipment = () => {
                                 name="userEmail"
                                 placeholder="Enter Your Email"
                                 defaultValue={user?.email}
+                                readOnly
                                 className="input input-bordered w-full"
                             />
                         </div>
