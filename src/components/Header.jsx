@@ -10,21 +10,21 @@ const Header = () => {
     const slides = [
         {
             id: 1,
-            image: "https://i.ibb.co/G3jCtxs/1.jpg",
-            title: "Career Planning Session",
-            description: "Plan your career with expert guidance.",
+            image: "https://i.ibb.co.com/28ShBXT/11.webp",
+            title: "Cricket",
+            description: "High-quality English willow cricket bat, perfect for professional and casual players.",
         },
         {
             id: 2,
-            image: "https://i.ibb.co/Nszjk6c/2.jpg",
-            title: "Resume Building Assistance",
-            description: "Build a resume that stands out.",
+            image: "https://i.ibb.co.com/RyPnRxq/22.jpg",
+            title: "Football",
+            description: "Premium FIFA-approved leather football, ideal for competitive matches.",
         },
         {
             id: 3,
-            image: "https://i.ibb.co/Y36M9GX/3.jpg",
-            title: "Mock Interview Sessions",
-            description: "Prepare for interviews with confidence.",
+            image: "https://i.ibb.co.com/nkf0HLx/33.jpg",
+            title: "Badminton",
+            description: "Badminton is a racquet sport played using racquets to hit a shuttlecock across a net.",
         },
     ];
 

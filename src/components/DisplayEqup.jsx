@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import EquipmentCard from './equipmentCard';
+import { Fade } from 'react-awesome-reveal';
+
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 const DisplayEqup = () => {
     const [loadedEquipments, setLoadedEquipments] = useState([]);
@@ -23,8 +27,12 @@ const DisplayEqup = () => {
     }
 
     return (
-        <div className="w-10/12 mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-6">Featured Equipment</h2>
+        <div className="w-10/12 mx-auto mt-10">
+            <Fade direction="down" triggerOnce>
+                <h1 className="text-3xl font-bold text-center mb-6">
+                    Featured Equipment
+                </h1>
+            </Fade>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-3">
                 {loadedEquipments.map((equipment) => (
                     <EquipmentCard
@@ -35,8 +43,10 @@ const DisplayEqup = () => {
             </div>
             <div className="text-center mt-6">
                 <Link to="/allequipment">
-                    <button className="btn btn-neutral px-10">View All</button>
+                    <button data-tooltip-id="my-tooltip"
+                        data-tooltip-content="Clock this button to view All Sports product" className="btn btn-neutral px-10">View All</button>
                 </Link>
+                <Tooltip id="my-tooltip" place="top" effect="solid" />
             </div>
         </div>
     );

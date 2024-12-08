@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const EquipmentCard = ({ equipment, loadedEquipments, SetLoadedEqiupments }) => {
     const { _id, name, categoryName, price, rating, processingTime, stockStatus, customization, imageUrl, description } = equipment;
     return (
