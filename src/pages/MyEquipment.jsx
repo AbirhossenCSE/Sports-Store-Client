@@ -3,6 +3,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import Navbar from '../components/Navbar';
 import Swal from 'sweetalert2';
 import { Link, useLoaderData } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const MyEquipment = () => {
     const { user } = useContext(AuthContext);
@@ -64,7 +65,9 @@ const MyEquipment = () => {
     }, [user]);
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <div className='flex min-h-screen justify-center items-center'>
+            <span className="loading loading-infinity loading-lg"></span>
+        </div>;
     }
 
     return (
@@ -74,7 +77,7 @@ const MyEquipment = () => {
             </nav>
             <div className="w-10/12 mx-auto my-4">
                 <h1 className="text-3xl font-bold text-center mb-6">My Equipment</h1>
-                <h2> Current User Email: {user?.email}</h2>
+                {/* <h2> Current User Email: {user?.email}</h2> */}
                 {myEquipment.length === 0 ? (
                     <p className="text-center text-gray-500">No equipment found for your account.</p>
                 ) : (
@@ -112,6 +115,9 @@ const MyEquipment = () => {
                     </div>
                 )}
             </div>
+            <footer>
+                <Footer></Footer>
+            </footer>
         </div>
     );
 };

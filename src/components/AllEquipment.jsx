@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const AllEquipment = () => {
     const equipment = useLoaderData();
@@ -105,6 +106,9 @@ const AllEquipment = () => {
                     </table>
                 </div>
             </div>
+            <footer>
+                <Footer></Footer>
+            </footer>
         </div>
     );
 };

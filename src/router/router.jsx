@@ -12,6 +12,7 @@ import Register from '../pages/Register';
 import PrivateRoute from './PrivateRoute';
 import Profile from '../components/Profile';
 import UpdateEquip from '../pages/UpdateEquip';
+import Error from '../pages/Error';
 
 
 const router = createBrowserRouter([
@@ -86,7 +87,7 @@ const router = createBrowserRouter([
     },
     {
         path: '*',
-        element: <h1>Error 404</h1>
+        element: <Error></Error>,
     },
 
 ])

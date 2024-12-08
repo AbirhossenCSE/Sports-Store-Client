@@ -7,7 +7,6 @@ const DisplayEqup = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Fetch only 6 products
         fetch('https://sports-equipment-store-server-fawn.vercel.app/equipment?limit=6')
             .then((res) => res.json())
             .then((data) => {
@@ -36,7 +35,7 @@ const DisplayEqup = () => {
             </div>
             <div className="text-center mt-6">
                 <Link to="/allequipment">
-                    <button className="btn btn-primary">View All</button>
+                    <button className="btn btn-neutral px-10">View All</button>
                 </Link>
             </div>
         </div>
