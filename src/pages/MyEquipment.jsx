@@ -78,7 +78,7 @@ const MyEquipment = () => {
                 {myEquipment.length === 0 ? (
                     <p className="text-center text-gray-500">No equipment found for your account.</p>
                 ) : (
-                    <div className="grid lg:grid-cols-3 gap-6">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
                         {myEquipment.map((item) => (
                             <div key={item._id} className="bg-white shadow-md rounded-lg p-4">
                                 <img
@@ -95,7 +95,7 @@ const MyEquipment = () => {
                                 <div className="flex justify-between mt-4 gap-2">
                                     <div className='w-1/2'>
                                         <Link to={`/updatequipment/${item._id}`}>
-                                            <button className="btn join-item w-full bg-gray-400">Edit</button>
+                                            <button className="btn join-item w-full bg-gray-400">Update</button>
                                         </Link>
                                     </div>
                                     <div className='w-1/2'>

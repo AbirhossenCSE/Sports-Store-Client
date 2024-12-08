@@ -57,9 +57,9 @@ const AddEquipment = () => {
                 <form onSubmit={handleAddEqu} className="p-6 space-y-4 rounded-lg">
 
                     {/* Two Fields in One Row: Item Name & Category Name */}
-                    <div className="flex gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* Item Name */}
-                        <div className="form-control w-1/2">
+                        <div className="form-control ">
                             <label className="label">
                                 <span className="label-text">Item Name</span>
                             </label>
@@ -72,7 +72,7 @@ const AddEquipment = () => {
                         </div>
 
                         {/* Category Name */}
-                        <div className="form-control w-1/2">
+                        <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Category Name</span>
                             </label>
@@ -88,9 +88,9 @@ const AddEquipment = () => {
 
 
                     {/* Price & Rating */}
-                    <div className="flex gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* Price */}
-                        <div className="form-control w-1/2">
+                        <div className="form-control ">
                             <label className="label">
                                 <span className="label-text">Price</span>
                             </label>
@@ -103,7 +103,7 @@ const AddEquipment = () => {
                         </div>
 
                         {/* Rating */}
-                        <div className="form-control w-1/2">
+                        <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Rating</span>
                             </label>
@@ -120,9 +120,9 @@ const AddEquipment = () => {
                     </div>
 
                     {/* Processing Time & Stock Status */}
-                    <div className="flex gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* Processing Time */}
-                        <div className="form-control w-1/2">
+                        <div className="form-control ">
                             <label className="label">
                                 <span className="label-text">Processing Time</span>
                             </label>
@@ -135,7 +135,7 @@ const AddEquipment = () => {
                         </div>
 
                         {/* Stock Status */}
-                        <div className="form-control w-1/2">
+                        <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Stock Status</span>
                             </label>
@@ -147,9 +147,9 @@ const AddEquipment = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex gap-4'>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* Customization */}
-                        <div className="form-control w-1/2">
+                        <div className="form-control ">
                             <label className="label">
                                 <span className="label-text">Customization</span>
                             </label>
@@ -162,7 +162,7 @@ const AddEquipment = () => {
                         </div>
 
                         {/* Image URL */}
-                        <div className="form-control w-1/2">
+                        <div className="form-control ">
                             <label className="label">
                                 <span className="label-text">Image URL</span>
                             </label>
@@ -174,9 +174,9 @@ const AddEquipment = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex gap-4'>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* user name */}
-                        <div className="form-control w-1/2">
+                        <div className="form-control">
                             <label className="label">
                                 <span className="label-text">User Name</span>
                             </label>
@@ -189,7 +189,7 @@ const AddEquipment = () => {
                             />
                         </div>
                         {/* user email */}
-                        <div className="form-control w-1/2">
+                        <div className="form-control">
                             <label className="label">
                                 <span className="label-text">User Email</span>
                             </label>
