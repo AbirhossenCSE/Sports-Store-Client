@@ -34,18 +34,18 @@ const router = createBrowserRouter([
     },
     {
         path: '/addequipment',
-        element: <PrivateRoute><AddEquipment></AddEquipment></PrivateRoute> ,
+        element: <PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>,
     },
     {
         path: '/myequipment',
-        element: <PrivateRoute><MyEquipment></MyEquipment></PrivateRoute> ,
+        element: <PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
         loader: () => fetch('https://sports-equipment-store-server-fawn.vercel.app/equipment')
     },
     {
         path: '/updatequipment/:id',
-        element: <PrivateRoute><UpdateEquip></UpdateEquip></PrivateRoute> ,
+        element: <PrivateRoute><UpdateEquip></UpdateEquip></PrivateRoute>,
         loader: ({ params }) => fetch(`https://sports-equipment-store-server-fawn.vercel.app/equipment/${params.id}`)
-      },
+    },
     {
         path: '/viewDetails',
         element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
