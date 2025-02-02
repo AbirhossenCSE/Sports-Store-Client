@@ -1,7 +1,7 @@
 # Sports Equipment Store
 
 ## Live Website
-[Live Site Link](https://auth-moha-milon-88362.web.app)
+[Click Here](https://auth-moha-milon-88362.web.app)
 
 ## Overview
 The **Sports Equipment Store** is an e-commerce platform where users can browse, purchase, and review sports accessories. The website includes features like user authentication, product management, and dynamic sorting, providing a seamless shopping experience.
